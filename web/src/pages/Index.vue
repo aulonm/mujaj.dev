@@ -48,6 +48,11 @@
             url
           }
         }
+        authors {
+          author {
+            name
+          }
+        }
       }
     }
   }

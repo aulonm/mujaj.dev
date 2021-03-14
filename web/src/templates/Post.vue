@@ -11,7 +11,7 @@
 
         <div class="blog-post-content container p-0">
           <div class="blog-post-meta font-semibold text-sm mb-4 text-gray">
-            <span v-if="$page.post.author">By: {{ $page.post.author.name }} /</span>
+            <span v-if="$page.post.authors.length > 0">By: {{ getAuthors }} </span>
             Posted on: {{ $page.post.publishedAt }}
           </div>
           <block-content :blocks="$page.post._rawBody" />
@@ -27,6 +27,11 @@
 
     post: sanityPost (id: $id) {
       title
+      authors {
+        author {
+          name
+        }
+      }
       publishedAt(format: "MMMM D, YYYY")
       _rawBody
       mainImage {
@@ -72,6 +77,23 @@ export default {
     return {
       title: this.$page.post.title,
     };
+  },
+
+  computed: {
+    getAuthors() {
+      if (this.$page.post.authors.length > 1) {
+        let authors = '';
+        this.$page.post.authors.forEach((author) => {
+          if (authors.length === 0) {
+            authors = author.author.name;
+          } else {
+            authors = `${authors} / ${author.author.name}`;
+          }
+        });
+        return authors;
+      }
+      return this.$page.post.authors[0].author.name;
+    },
   },
 };
 </script>

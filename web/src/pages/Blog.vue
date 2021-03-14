@@ -38,6 +38,11 @@
               url
             }
           }
+          authors {
+            author {
+              name
+            }
+          }
         }
       }
     }

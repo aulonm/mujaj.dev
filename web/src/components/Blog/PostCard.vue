@@ -12,7 +12,7 @@
     </div>
     <div class="post-card-content relative flex flex-col p-6 h-full w-full">
       <div class="post-card-meta font-semibold text-xs leading-tight mb-4">
-        <span v-if="post.author"> By: {{ post.author.name }} /</span>
+        <span v-if="post.authors.length > 0"> By: {{ getAuthors }} /</span>
         Posted on: {{ post.publishedAt }}
       </div>
       <g-link class="post-card-link inline-flex font-medium text-base px-4 -ml-4" :to="postUrl">
@@ -52,6 +52,21 @@ export default {
 
     postUrl() {
       return `/blog/${this.post.slug.current}`;
+    },
+
+    getAuthors() {
+      if (this.post.authors.length > 1) {
+        let authors = '';
+        this.post.authors.forEach((author) => {
+          if (authors.length === 0) {
+            authors = author.author.name;
+          } else {
+            authors = `${authors} / ${author.author.name}`;
+          }
+        });
+        return authors;
+      }
+      return this.post.authors[0].author.name;
     },
   },
 };
