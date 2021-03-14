@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <app-banner heading="Akarui" subheading="start using:">
+    <app-banner heading="Mujaj dev" subheading="Welcome to:">
       <p class="p-sm">
         A gridsome starter inspired by the
         <a
@@ -57,23 +57,23 @@
     }
   }
   projects: allSanityProject (sortBy: "completed" limit: 1) {
-      edges {
-        node {
-          id
-          slug {
-            current
-          }
-          title
-          mainImage {
-            asset {
-              id
-              localFile(width: 1100, quality: 80)
-              url
-            }
+    edges {
+      node {
+        id
+        slug {
+          current
+        }
+        title
+        mainImage {
+          asset {
+            id
+            localFile(width: 1100, quality: 80)
+            url
           }
         }
       }
     }
+  }
 }
 
 </page-query>

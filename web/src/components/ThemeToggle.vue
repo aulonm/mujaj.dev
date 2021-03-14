@@ -4,8 +4,8 @@
     :aria-label="`Current theme is ${mode}, next theme is ${nextThemeMode}`"
     @click="handleClick"
   >
-    <SunIcon v-if="isDark" size="1.5x" />
-    <MoonIcon v-else size="1.5x" />
+    <sun-icon v-if="isDark" size="1.5x" />
+    <moon-icon v-else size="1.5x" />
   </button>
 </template>
 

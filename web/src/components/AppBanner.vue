@@ -8,7 +8,7 @@
       <slot />
     </div>
     <div class="aka-banner-image hidden md:block">
-      <AppLogo class="block w-full h-auto" />
+      <app-logo class="block w-full h-auto" />
     </div>
   </section>
 </template>

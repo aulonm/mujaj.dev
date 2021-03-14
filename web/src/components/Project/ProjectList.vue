@@ -1,6 +1,6 @@
 <template>
   <ul class="aka-projects grid gap-8 items-stretch">
-    <ProjectCard v-for="project in projects" :key="project.node.id" :project="project.node" />
+    <project-card v-for="project in projects" :key="project.node.id" :project="project.node" />
   </ul>
 </template>
 

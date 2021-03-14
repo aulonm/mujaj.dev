@@ -1,7 +1,7 @@
 <template>
   <div class="aka-project-pagination mx-auto text-center pt-10">
     <g-link :to="`/projects/${next.slug.current}`">
-      <AppImage :main-image="nextImage" />
+      <app-image :main-image="nextImage" />
       <p class="text-sm font-bold mt-4 mb-6 leading-none text-gray">next</p>
       <h2 class="text-lg font-black">{{ next.title }}</h2>
     </g-link>
@@ -24,7 +24,8 @@ export default {
     },
     nextImage: {
       type: Object,
-      required: true,
+      required: false,
+      default: () => ({}),
     },
   },
 };

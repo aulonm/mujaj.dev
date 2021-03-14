@@ -6,11 +6,11 @@
           {{ $page.project.title }}
         </h1>
       </header>
-      <AppImage v-if="$page.project.mainImage || {}" class="project-banner" :main-image="$page.project.mainImage" />
+      <app-image v-if="$page.project.mainImage || {}" class="project-banner" :main-image="$page.project.mainImage" />
 
       <div class="project-content container mt-10 px-0">
-        <BlockContent :blocks="$page.project._rawBody" />
-        <ProjectPagination :next="$page.next" :next-image="$page.next.mainImage" />
+        <block-content :blocks="$page.project._rawBody" />
+        <project-pagination :next="$page.next" :next-image="$page.next.mainImage" />
       </div>
     </div>
   </Layout>

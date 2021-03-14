@@ -2,7 +2,7 @@
   <div class="aka-post-card bg-card relative flex flex-col h-full" :class="{ 'is-large': isLarge }">
     <div class="relative flex flex-auto w-full">
       <g-link class="block w-full" :to="postUrl">
-        <AppImage
+        <app-image
           class="aka-card-image relative flex flex-auto w-full"
           image-classes="block w-full h-full object-cover absolute"
           :main-image="post.mainImage"

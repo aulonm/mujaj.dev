@@ -17,23 +17,6 @@ export default {
     AppHeader,
     AppFooter,
   },
-
-  data: () => ({
-    nav: [
-      {
-        label: 'about',
-        to: '/about',
-      },
-      {
-        label: 'blog',
-        to: '/blog',
-      },
-      {
-        label: 'projects',
-        to: '/projects',
-      },
-    ],
-  }),
 };
 </script>
 

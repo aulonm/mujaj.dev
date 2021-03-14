@@ -33,7 +33,8 @@ export default {
     },
     imageClasses: {
       type: String,
-      required: true,
+      required: false,
+      default: '',
     },
     useLocalImage: {
       type: Boolean,
