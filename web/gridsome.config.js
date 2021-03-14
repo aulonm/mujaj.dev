@@ -10,18 +10,33 @@ require('dotenv').config({
 
 const clientConfig = require('./client-config')
 
+const tailwind = require('tailwindcss')
+
 const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
-  siteName: 'Gridsome Blog Starter',
+  siteName: 'Mujaj dev',
   siteDescription:
-    'A simple, hackable & minimalistic starter for Gridsome that uses structured content from Sanity.io.',
+    'Just a website for Mujaj dev',
 
   templates: {
     SanityPost: '/:slug__current'
   },
+  css: {
+    loaderOptions: {
+      postcss: {
+        plugins: [tailwind()],
+      },
+    },
+  },
 
   plugins: [
+    {
+      use: 'gridsome-plugin-svg',
+      options: {
+        goesBothWays: true,
+      },
+    },
     {
       use: 'gridsome-source-sanity',
       options: {
@@ -31,6 +46,17 @@ module.exports = {
         overlayDrafts: !isProd,
         watchMode: !isProd
       }
+    },
+    {
+      use: '@noxify/gridsome-plugin-remote-image',
+      options: {
+        cache: false,
+        typeName: 'SanityImageAsset',
+        schemaType: 'Image',
+        sourceField: 'url',
+        targetField: 'localFile',
+        targetPath: 'src/assets/sanity/images',
+      },
     }
     /* {
       // Create posts from markdown files

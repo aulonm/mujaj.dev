@@ -6,6 +6,8 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const clientConfig = require('./client-config')
 
+const { createPagesQuery, createPagesWithPagination } = require('./src/utils/createPages')
+
 module.exports = function(api) {
   api.loadSource(store => {
     // Use the Data store API here: https://gridsome.org/docs/data-store-api
@@ -18,5 +20,24 @@ module.exports = function(api) {
         id: ID!
       }
     `)
+  })
+
+  api.createPages(async ({ graphql, createPage }) => {
+    const { data } = await graphql(createPagesQuery)
+    const allSanityPosts = data.allSanityPost.edges
+    const allSanityProjects = data.allSanityProject.edges
+
+    createPagesWithPagination({
+      edges: allSanityPosts,
+      component: './src/templates/Post.vue',
+      path: 'blog',
+      createPage,
+    })
+    createPagesWithPagination({
+      edges: allSanityProjects,
+      component: './src/templates/Project.vue',
+      path: 'projects',
+      createPage,
+    })
   })
 }

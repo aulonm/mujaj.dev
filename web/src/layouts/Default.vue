@@ -1,90 +1,47 @@
 <template>
-  <div id="app">
-    <header class="header">
-      <div class="header__left">
-        <header-logo v-if="showLogo" />
-      </div>
-
-      <div class="header__right">
-        <toggle-theme />
+  <div class="layout flex flex-col relative min-h-screen">
+    <header class="flex items-center mb-6 h-20">
+      <div class="container flex items-center justify-between">
+        <div class="app-logo">
+          <g-link to="/">
+            <strong>{{ $static.metadata.siteName }}</strong>
+          </g-link>
+        </div>
+        <AppNav />
+        <ThemeToggle />
       </div>
     </header>
-
-    <main class="main">
+    <div class="app-slot container mb-8">
       <slot />
-    </main>
-
-    <footer class="footer">
-      <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}.</span>
-      <span class="footer__links">
-        Powered by
-        <a href="//gridsome.org">Gridsome</a> &amp;
-        <a href="//www.sanity.io">Sanity.io</a>
-      </span>
-    </footer>
+    </div>
+    <AppFooter />
   </div>
 </template>
 
+<static-query>
+  query {
+    metadata {
+      siteName
+    }
+  }
+</static-query>
+
 <script>
-import HeaderLogo from '~/components/HeaderLogo'
-import ToggleTheme from '~/components/ToggleTheme'
+import AppNav from '@/components/AppNav.vue'
+import AppFooter from '@/components/AppFooter.vue'
+import ThemeToggle from '@/components/ThemeToggle.vue'
 
 export default {
-  props: {
-    showLogo: {
-      type: Boolean,
-      default: true
-    }
-  },
   components: {
-    HeaderLogo,
-    ToggleTheme
-  }
+    AppNav,
+    AppFooter,
+    ThemeToggle,
+  },
 }
 </script>
 
-<style lang="scss">
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: var(--header-height);
-  padding: 0 calc(var(--space) / 2);
-  top: 0;
-  z-index: 10;
-
-  &__left,
-  &__right {
-    display: flex;
-    align-items: center;
-  }
-
-  @media screen and (min-width: 1300px) {
-    //Make header sticky for large screens
-    position: sticky;
-    width: 100%;
-  }
-}
-
-.main {
-  margin: 0 auto;
-  padding: 1.5vw 15px 0;
-}
-
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: calc(var(--space) / 2);
-  text-align: center;
-  font-size: 0.8em;
-
-  > span {
-    margin: 0 0.35em;
-  }
-
-  a {
-    color: currentColor;
-  }
+<style>
+.container {
+  @apply relative mx-auto w-full;
 }
 </style>

@@ -1,5 +1,12 @@
 // Import main css
-import '~/assets/style/index.scss'
+import 'fontsource-inter'
+import 'fontsource-inter/600.css'
+import 'fontsource-inter/700.css'
+import 'fontsource-inter/900.css'
+
+import '@/assets/styles/tailwind.css'
+import '@/assets/styles/theme.css'
+import '@/assets/styles/global.css'
 
 // Import default layout so we don't need to import it to every page
 import DefaultLayout from '~/layouts/Default.vue'
