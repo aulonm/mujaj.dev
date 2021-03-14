@@ -1,43 +1,40 @@
 <template>
   <div class="layout flex flex-col relative min-h-screen">
-    <header class="flex items-center mb-6 h-20">
-      <div class="container flex items-center justify-between">
-        <div class="app-logo">
-          <g-link to="/">
-            <strong>{{ $static.metadata.siteName }}</strong>
-          </g-link>
-        </div>
-        <AppNav />
-        <ThemeToggle />
-      </div>
-    </header>
+    <app-header />
     <div class="app-slot container mb-8">
       <slot />
     </div>
-    <AppFooter />
+    <app-footer />
   </div>
 </template>
 
-<static-query>
-  query {
-    metadata {
-      siteName
-    }
-  }
-</static-query>
-
 <script>
-import AppNav from '@/components/AppNav.vue'
-import AppFooter from '@/components/AppFooter.vue'
-import ThemeToggle from '@/components/ThemeToggle.vue'
+import AppHeader from '@/components/AppHeader.vue';
+import AppFooter from '@/components/AppFooter.vue';
 
 export default {
   components: {
-    AppNav,
+    AppHeader,
     AppFooter,
-    ThemeToggle,
   },
-}
+
+  data: () => ({
+    nav: [
+      {
+        label: 'about',
+        to: '/about',
+      },
+      {
+        label: 'blog',
+        to: '/blog',
+      },
+      {
+        label: 'projects',
+        to: '/projects',
+      },
+    ],
+  }),
+};
 </script>
 
 <style>

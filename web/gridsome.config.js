@@ -5,22 +5,20 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 // Load variables from `.env` as soon as possible
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV || 'development'}`
-})
+  path: `.env.${process.env.NODE_ENV || 'development'}`,
+});
 
-const clientConfig = require('./client-config')
+const tailwind = require('tailwindcss');
+const clientConfig = require('./client-config');
 
-const tailwind = require('tailwindcss')
-
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
   siteName: 'Mujaj dev',
-  siteDescription:
-    'Just a website for Mujaj dev',
+  siteDescription: 'Just a website for Mujaj dev',
 
   templates: {
-    SanityPost: '/:slug__current'
+    SanityPost: '/:slug__current',
   },
   css: {
     loaderOptions: {
@@ -44,8 +42,8 @@ module.exports = {
         typeName: 'Sanity',
         token: process.env.SANITY_TOKEN,
         overlayDrafts: !isProd,
-        watchMode: !isProd
-      }
+        watchMode: !isProd,
+      },
     },
     {
       use: '@noxify/gridsome-plugin-remote-image',
@@ -57,7 +55,7 @@ module.exports = {
         targetField: 'localFile',
         targetPath: 'src/assets/sanity/images',
       },
-    }
+    },
     /* {
       // Create posts from markdown files
       use: '@gridsome/source-filesystem',
@@ -78,5 +76,5 @@ module.exports = {
 
       }
     } */
-  ]
-}
+  ],
+};

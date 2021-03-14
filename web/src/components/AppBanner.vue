@@ -1,7 +1,5 @@
 <template>
-  <section
-    class="aka-banner-wrapper relative w-full py-4 mb-8 md:grid md:gap-8 md:items-center md:mx-auto"
-  >
+  <section class="aka-banner-wrapper relative w-full py-4 mb-8 md:grid md:gap-8 md:items-center md:mx-auto">
     <div class="text-left">
       <p class="font-semibold text-xl leading-snug m-0 mb-2">
         {{ subheading }}
@@ -16,17 +14,24 @@
 </template>
 
 <script>
-import AppLogo from '@/assets/images/akarui-logo.svg?inline'
+import AppLogo from '@/assets/images/akarui-logo.svg?inline';
 
 export default {
   components: {
     AppLogo,
   },
+
   props: {
-    heading: String,
-    subheading: String,
+    heading: {
+      type: String,
+      required: true,
+    },
+    subheading: {
+      type: String,
+      required: true,
+    },
   },
-}
+};
 </script>
 
 <style lang="css" scoped>

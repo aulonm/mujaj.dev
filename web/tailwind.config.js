@@ -1,8 +1,8 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 const remCalc = (value, base = 16) => {
-  return `${value / base}rem`
-}
+  return `${value / base}rem`;
+};
 
 module.exports = {
   purge: {
@@ -57,4 +57,4 @@ module.exports = {
   },
   variants: {},
   plugins: [],
-}
+};

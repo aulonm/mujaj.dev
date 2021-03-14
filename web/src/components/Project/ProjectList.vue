@@ -1,25 +1,26 @@
 <template>
   <ul class="aka-projects grid gap-8 items-stretch">
-    <ProjectCard
-      v-for="project in projects"
-      :key="project.node.id"
-      :project="project.node"
-    />
+    <ProjectCard v-for="project in projects" :key="project.node.id" :project="project.node" />
   </ul>
 </template>
 
 <script>
-import ProjectCard from '@/components/Project/ProjectCard'
+import ProjectCard from '@/components/Project/ProjectCard.vue';
 
 export default {
   name: 'ProjectList',
+
   components: {
     ProjectCard,
   },
+
   props: {
-    projects: Array,
+    projects: {
+      type: Array,
+      required: true,
+    },
   },
-}
+};
 </script>
 
 <style scoped>

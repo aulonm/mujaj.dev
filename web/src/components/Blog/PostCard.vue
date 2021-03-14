@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="aka-post-card bg-card relative flex flex-col h-full"
-    :class="{ 'is-large': isLarge }"
-  >
+  <div class="aka-post-card bg-card relative flex flex-col h-full" :class="{ 'is-large': isLarge }">
     <div class="relative flex flex-auto w-full">
       <g-link class="block w-full" :to="postUrl">
         <AppImage
@@ -18,10 +15,7 @@
         <span v-if="post.author"> By: {{ post.author.name }} /</span>
         Posted on: {{ post.publishedAt }}
       </div>
-      <g-link
-        class="post-card-link inline-flex font-medium text-base px-4 -ml-4"
-        :to="postUrl"
-      >
+      <g-link class="post-card-link inline-flex font-medium text-base px-4 -ml-4" :to="postUrl">
         <h2 class="post-card-heading font-bold text-lg leading-tight mb-auto">
           {{ post.title }}
         </h2>
@@ -31,26 +25,36 @@
 </template>
 
 <script>
-import AppImage from '@/components/AppImage'
+import AppImage from '@/components/AppImage.vue';
 
 export default {
   name: 'PostCard',
+
   components: {
     AppImage,
   },
+
+  props: {
+    post: {
+      type: Object,
+      required: true,
+    },
+    index: {
+      type: Number,
+      required: true,
+    },
+  },
+
   computed: {
     isLarge() {
-      return this.index % 3 === 0
+      return this.index % 3 === 0;
     },
+
     postUrl() {
-      return `/blog/${this.post.slug.current}`
+      return `/blog/${this.post.slug.current}`;
     },
   },
-  props: {
-    post: Object,
-    index: Number,
-  },
-}
+};
 </script>
 
 <style lang="css" scoped>

@@ -9,18 +9,25 @@
 </template>
 
 <script>
-import AppImage from '@/components/AppImage'
+import AppImage from '@/components/AppImage.vue';
 
 export default {
   name: 'ProjectPagination',
   components: {
     AppImage,
   },
+
   props: {
-    next: Object,
-    nextImage: Object,
+    next: {
+      type: Object,
+      required: true,
+    },
+    nextImage: {
+      type: Object,
+      required: true,
+    },
   },
-}
+};
 </script>
 
 <style lang="css" scoped>

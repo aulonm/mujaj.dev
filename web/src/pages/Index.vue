@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <AppBanner heading="Akarui" subheading="start using:">
+    <app-banner heading="Akarui" subheading="start using:">
       <p class="p-sm">
         A gridsome starter inspired by the
         <a
@@ -12,14 +12,14 @@
         >
         Made with tailwind css. Integrates with sanity.io
       </p>
-    </AppBanner>
+    </app-banner>
     <section v-if="$page.posts.edges.length" class="mx-auto pt-10">
       <h2 class="font-bold mb-4 text-3xl">Latests Posts</h2>
-      <PostList :posts="$page.posts.edges" />
+      <post-list :posts="$page.posts.edges" />
     </section>
     <section v-if="$page.projects.edges.length" class="mx-auto pt-10">
       <h2 class="font-bold mb-4 text-3xl">Latest Project</h2>
-      <ProjectList :projects="$page.projects.edges" />
+      <project-list :projects="$page.projects.edges" />
     </section>
   </Layout>
 </template>
@@ -74,9 +74,9 @@
 </page-query>
 
 <script>
-import AppBanner from '@/components/AppBanner'
-import PostList from '@/components/Blog/PostList'
-import ProjectList from '@/components/Project/ProjectList'
+import AppBanner from '@/components/AppBanner.vue';
+import PostList from '@/components/Blog/PostList.vue';
+import ProjectList from '@/components/Project/ProjectList.vue';
 
 export default {
   components: {
@@ -84,8 +84,9 @@ export default {
     PostList,
     ProjectList,
   },
+
   metaInfo: {
-    title: 'Hello, world!'
-  }
-}
+    title: 'Hello, world!',
+  },
+};
 </script>

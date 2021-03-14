@@ -6,18 +6,11 @@
           {{ $page.project.title }}
         </h1>
       </header>
-      <AppImage
-        v-if="$page.project.mainImage"
-        class="project-banner"
-        :main-image="$page.project.mainImage"
-      />
+      <AppImage v-if="$page.project.mainImage || {}" class="project-banner" :main-image="$page.project.mainImage" />
 
       <div class="project-content container mt-10 px-0">
         <BlockContent :blocks="$page.project._rawBody" />
-        <ProjectPagination
-          :next="$page.next"
-          :next-image="$page.next.mainImage"
-        />
+        <ProjectPagination :next="$page.next" :next-image="$page.next.mainImage" />
       </div>
     </div>
   </Layout>
@@ -55,23 +48,25 @@
 </page-query>
 
 <script>
-import AppImage from '@/components/AppImage'
-import BlockContent from '@/components/BlockContent'
-import ProjectPagination from '@/components/Project/ProjectPagination'
+import AppImage from '@/components/AppImage.vue';
+import BlockContent from '@/components/BlockContent.vue';
+import ProjectPagination from '@/components/Project/ProjectPagination.vue';
 
 export default {
   name: 'Project',
+
   components: {
     AppImage,
     BlockContent,
     ProjectPagination,
   },
+
   metaInfo() {
     return {
       title: this.$page.project.title,
-    }
+    };
   },
-}
+};
 </script>
 
 <style lang="css" scoped>
