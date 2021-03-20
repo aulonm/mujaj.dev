@@ -49,6 +49,10 @@ export default {
         label: 'projects',
         to: '/projects',
       },
+      {
+        label: 'photo collection',
+        to: '/photo-collection'
+      }
     ],
   }),
 };
