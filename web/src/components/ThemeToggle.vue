@@ -43,7 +43,6 @@ export default {
 
       this.setThemeMode();
     }
-    console.log(this.mode);
   },
 
   methods: {

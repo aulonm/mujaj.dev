@@ -21,6 +21,10 @@
       <h2 class="font-bold mb-4 text-3xl">Latest Project</h2>
       <project-list :projects="$page.projects.edges" />
     </section>
+    <section v-if="$page.collections.edges.length" class="mx-auto pt-10">
+      <h2 class="font-bold mb-4 text-3xl">Latest Collections</h2>
+      <div>{{ $page.collections.edges[0].node.title }}</div>
+    </section>
   </Layout>
 </template>
 
@@ -71,6 +75,17 @@
             url
           }
         }
+      }
+    }
+  }
+  collections: allSanityPhotoCollection (sortBy: "publishedAt" limit: 1) {
+    edges {
+      node {
+        id
+        slug {
+          current
+        }
+        title
       }
     }
   }
