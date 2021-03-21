@@ -31,6 +31,7 @@
 
 <script>
 import PortableText from 'sanity-blocks-vue-component';
+import CodeBlock from './CodeBlock.vue';
 
 export default {
   components: {
@@ -47,15 +48,7 @@ export default {
   data: () => ({
     serializers: {
       types: {
-        code: ({ node }) => {
-          if (!node || !node.code) {
-            return null;
-          }
-
-          const { language, code } = node;
-          console.log(language, code);
-          return <figure></figure>;
-        },
+        code: CodeBlock,
         image: ({ node }) => {
           const image = this.$static.localImages.edges.find(({ node: localImage }) => {
             if (localImage.id === node.asset._ref) {
