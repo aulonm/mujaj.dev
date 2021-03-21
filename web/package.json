@@ -17,16 +17,18 @@
     "gridsome": "^0.7.23",
     "gridsome-plugin-svg": "^0.0.14",
     "gridsome-source-sanity": "^1.0.5",
+    "highlight.js": "^10.6.0",
     "postcss": "^8.1.14",
     "sanity-blocks-vue-component": "^0.1.0",
     "tailwindcss": "^2.0.1",
-    "vue-feather-icons": "^5.1.0"
+    "vue-feather-icons": "^5.1.0",
+    "vue-highlight.js": "^4.0.1-beta"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "^4.5.11",
     "@vue/cli-service": "^4.5.11",
-    "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-airbnb": "^5.3.0",
+    "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
     "dotenv": "^8.2.0",
     "eslint": "^7.22.0",

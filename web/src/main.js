@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable func-names */
+
 // Import main css
 import 'fontsource-inter';
 import 'fontsource-inter/600.css';
@@ -17,7 +18,7 @@ import DefaultLayout from '@/layouts/Default.vue';
 import urlForImage from './utils/urlForImage';
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
-export default function (Vue) {
+export default function (Vue, { isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout);
 
