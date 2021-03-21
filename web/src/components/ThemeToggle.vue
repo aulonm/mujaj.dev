@@ -43,6 +43,7 @@ export default {
 
       this.setThemeMode();
     }
+    console.log(this.mode);
   },
 
   methods: {
@@ -53,7 +54,7 @@ export default {
 
     setThemeMode() {
       this.saveThemeMode(this.mode);
-      document.documentElement.dataset.theme = this.mode;
+      document.body.setAttribute('data-theme', this.mode);
     },
 
     hasInStorage() {
