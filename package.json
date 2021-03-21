@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "sanity-gridsome",
+  "name": "mujaj-dev",
   "version": "1.0.4",
   "scripts": {
     "build": "lerna run build --parallel",
