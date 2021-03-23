@@ -15,7 +15,7 @@
             Posted on: {{ $page.post.publishedAt }}
           </div>
           <block-content :blocks="$page.post._rawBody" />
-          <post-pagination :next="$page.nextPost" :prev="$page.prevPost" />
+          <pagination :next="$page.nextPost" :prev="$page.prevPost" type="blog" />
         </div>
       </article>
     </div>
@@ -62,7 +62,7 @@
 <script>
 import AppImage from '@/components/AppImage.vue';
 import BlockContent from '@/components/BlockContent.vue';
-import PostPagination from '@/components/Blog/PostPagination.vue';
+import Pagination from '@/components/Pagination.vue';
 
 export default {
   name: 'Post',
@@ -70,7 +70,7 @@ export default {
   components: {
     AppImage,
     BlockContent,
-    PostPagination,
+    Pagination,
   },
 
   metaInfo() {

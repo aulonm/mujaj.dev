@@ -51,8 +51,8 @@ export default {
       },
       {
         label: 'photo collection',
-        to: '/photo-collection'
-      }
+        to: '/photo-collection',
+      },
     ],
   }),
 };

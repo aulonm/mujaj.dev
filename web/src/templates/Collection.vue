@@ -7,15 +7,14 @@
             {{ $page.collection.title }}
           </h1>
         </header>
-        <app-image v-if="$page.collection.mainImage" class="blog-post-banner mb-8" :main-image="$page.post.mainImage" />
+        <images
+          v-if="$page.collection.imagesGallery.length > 0"
+          class="blog-post-banner mb-8"
+          :images="$page.collection.imagesGallery"
+        />
 
         <div class="blog-post-content container p-0">
-          <div class="blog-post-meta font-semibold text-sm mb-4 text-gray">
-            <span v-if="$page.collection.authors.length > 0">By: {{ getAuthors }} </span>
-            Posted on: {{ $page.collection.publishedAt }}
-          </div>
-          <block-content :blocks="$page.collection._rawBody" />
-          <post-pagination :next="$page.nextPost" :prev="$page.prevPost" />
+          <pagination :next="$page.nextPost" :prev="$page.prevPost" type="photo-collection" />
         </div>
       </article>
     </div>
@@ -55,23 +54,25 @@
 </page-query>
 
 <script>
-import AppImage from '@/components/AppImage.vue';
-import BlockContent from '@/components/BlockContent.vue';
-import PostPagination from '@/components/Blog/PostPagination.vue';
+import Images from '@/components/Collection/Images.vue';
+import Pagination from '@/components/Pagination.vue';
 
 export default {
   name: 'PhotoCollection',
 
   components: {
-    AppImage,
-    BlockContent,
-    PostPagination,
+    Images,
+    Pagination,
   },
 
   metaInfo() {
     return {
-      title: this.$page.post.title,
+      title: this.$page.collection.title,
     };
+  },
+
+  mounted() {
+    console.log(this.$page.collection);
   },
 };
 </script>

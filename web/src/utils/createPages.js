@@ -35,7 +35,7 @@ const createPagesQuery = gql`
     allSanityPhotoCollection(sortBy: "updatedAt") {
       edges {
         node {
-          id,
+          id
           slug {
             current
           }

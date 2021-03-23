@@ -26,7 +26,7 @@ import DefaultLayout from '@/layouts/Default.vue';
 import urlForImage from './utils/urlForImage';
 
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
-export default function (Vue, { isClient }) {
+export default function (Vue) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout);
 
@@ -34,9 +34,9 @@ export default function (Vue, { isClient }) {
     languages: {
       css,
       javascript,
-      vue
+      vue,
     },
-  })
+  });
 
   // Inject global image URL builder
   Vue.prototype.$urlForImage = urlForImage;

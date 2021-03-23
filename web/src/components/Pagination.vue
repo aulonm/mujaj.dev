@@ -3,7 +3,7 @@
     <div class="post-pagination-item is-prev relative text-sm">
       <g-link
         class="inline-block leading-snug py-2"
-        :to="`/blog/${prev.slug.current}`"
+        :to="`/${type}/${prev.slug.current}`"
         :aria-label="`Previous post: ${next.title}`"
       >
         <span class="block font-semibold text-tiny leading-loose text-primary">previous</span>
@@ -13,7 +13,7 @@
     <div class="post-pagination-item is-next text-right">
       <g-link
         class="inline-block leading-snug py-2"
-        :to="`/blog/${next.slug.current}`"
+        :to="`/${type}/${next.slug.current}`"
         :aria-label="`Next post: ${next.title}`"
       >
         <span class="block font-semibold text-tiny leading-loose text-primary">next</span>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'PostPagination',
+  name: 'Pagination',
   props: {
     prev: {
       type: Object,
@@ -33,6 +33,10 @@ export default {
     },
     next: {
       type: Object,
+      required: true,
+    },
+    type: {
+      type: String,
       required: true,
     },
   },

@@ -1,10 +1,21 @@
 <template>
   <Layout>
-    <h1 class="aka-section-heading">Photo Collections</h1>
     <div class="blog-container">
       <template v-if="$page.collections.edges.length" :posts="$page.collections.edges">
-        <div v-for="collection in $page.collections.edges">
-          <h2>{{collection.node.title}}</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <g-link
+            v-for="({ node }, index) in $page.collections.edges"
+            :key="index"
+            class="shadow-lg rounded p-3 flex flex-col justify-between"
+            :to="`/photo-collection/${node.slug.current}`"
+          >
+            <div class="group relative">
+              <img class="w-full md:w-100 block rounded" :src="node.imagesGallery[0].asset.url" />
+            </div>
+            <div class="p-5">
+              <h3 class="text-md">{{ node.title }}</h3>
+            </div>
+          </g-link>
         </div>
       </template>
       <div v-else>
@@ -53,7 +64,7 @@ import { Pager } from 'gridsome';
 
 export default {
   components: {
-    Pager
+    Pager,
   },
 
   metaInfo: {
@@ -62,6 +73,6 @@ export default {
 
   mounted() {
     console.log(this.$page.collections);
-  }
+  },
 };
 </script>
