@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h1 class="aka-section-heading">Blog</h1>
+    <h1 class="dev-section-heading">Blog</h1>
     <div class="blog-container">
       <post-list v-if="$page.posts.edges.length" :posts="$page.posts.edges" />
       <div v-else>
@@ -8,7 +8,7 @@
       </div>
       <pager
         aria-label="Blog pagination navigation"
-        class="aka-pagination-navigation flex flex-row items-center justify-center py-4 mt-4 w-full"
+        class="dev-pagination-navigation flex flex-row items-center justify-center py-4 mt-4 w-full"
         link-class="font-medium mx-2 p-2"
         :info="$page.posts.pageInfo"
       />

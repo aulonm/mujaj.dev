@@ -2,7 +2,7 @@
   <li class="relative flex flex-auto w-full">
     <g-link class="block w-full" :to="projectUrl">
       <app-image
-        class="aka-card-image relative flex flex-auto w-full"
+        class="dev-card-image relative flex flex-auto w-full"
         image-classes="block w-full h-full object-cover absolute"
         :main-image="project.mainImage"
         placeholder

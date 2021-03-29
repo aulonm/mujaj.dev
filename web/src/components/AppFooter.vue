@@ -1,5 +1,5 @@
 <template>
-  <footer class="aka-footer bg-footer mt-auto p-8 text-center text-gray">
+  <footer class="dev-footer bg-footer mt-auto p-8 text-center text-gray">
     <div class="container">
       <p class="font-bold text-xs">
         Made with Gridsome and Sanity by

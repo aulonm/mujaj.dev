@@ -1,5 +1,5 @@
 <template>
-  <div class="aka-project-pagination mx-auto text-center pt-10">
+  <div class="dev-project-pagination mx-auto text-center pt-10">
     <g-link :to="`/projects/${next.slug.current}`">
       <app-image :main-image="nextImage" />
       <p class="text-sm font-bold mt-4 mb-6 leading-none text-gray">next</p>
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.aka-project-pagination {
+.dev-project-pagination {
   max-width: 320px;
 }
 </style>

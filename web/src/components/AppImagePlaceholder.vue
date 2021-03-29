@@ -1,17 +1,13 @@
 <template>
-  <div class="bg-primary flex flex-col items-center justify-center">
-    <image-placeholder class="w-20 lg:w-40 fill-current" />
+  <div class=" bg-gradient-to-tl from-primary to-secondary flex flex-col items-center justify-center">
   </div>
 </template>
 
 <script>
-import ImagePlaceholder from '@/assets/images/main-image-placeholder.svg?inline';
-
 export default {
   name: 'AppImagePlaceholder',
 
   components: {
-    ImagePlaceholder,
   },
 };
 </script>

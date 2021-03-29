@@ -23,7 +23,7 @@
       </div>
       <pager
         aria-label="Blog pagination navigation"
-        class="aka-pagination-navigation flex flex-row items-center justify-center py-4 mt-4 w-full"
+        class="dev-pagination-navigation flex flex-row items-center justify-center py-4 mt-4 w-full"
         link-class="font-medium mx-2 p-2"
         :info="$page.collections.pageInfo"
       />

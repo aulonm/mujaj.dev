@@ -1,9 +1,9 @@
 <template>
-  <div class="aka-post-card bg-card relative flex flex-col h-full" :class="{ 'is-large': isLarge }">
+  <div class="dev-post-card bg-card relative flex flex-col h-full" :class="{ 'is-large': isLarge }">
     <div class="relative flex flex-auto w-full">
       <g-link class="block w-full" :to="postUrl">
         <app-image
-          class="aka-card-image relative flex flex-auto w-full"
+          class="dev-card-image relative flex flex-auto w-full"
           image-classes="block w-full h-full object-cover absolute"
           :main-image="post.mainImage"
           placeholder
@@ -73,25 +73,25 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.aka-post-card.is-large {
+.dev-post-card.is-large {
   @apply relative bg-secondary text-black;
 }
 
-.aka-post-card.is-large .post-card-heading {
+.dev-post-card.is-large .post-card-heading {
   @apply font-bold leading-tight;
 }
 
 @screen xl {
-  .aka-post-card.is-large {
+  .dev-post-card.is-large {
     @apply grid;
     grid-template-columns: 60% 1fr;
   }
 
-  .aka-post-card.is-large .post-card-heading {
+  .dev-post-card.is-large .post-card-heading {
     @apply text-2xl;
   }
 
-  .aka-post-card.is-large .post-card-content {
+  .dev-post-card.is-large .post-card-content {
     @apply justify-center;
   }
 }

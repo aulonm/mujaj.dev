@@ -1,5 +1,5 @@
 <template>
-  <ul class="aka-blog-posts grid gap-8 items-stretch">
+  <ul class="dev-blog-posts grid gap-8 items-stretch">
     <li v-for="(edge, index) in posts" :key="edge.node.id">
       <post-card :index="index" :post="edge.node" />
     </li>
@@ -27,16 +27,16 @@ export default {
 
 <style scoped>
 @screen md {
-  .aka-blog-posts {
+  .dev-blog-posts {
     grid-template-columns: 1fr 1fr;
   }
-  .aka-blog-posts li {
+  .dev-blog-posts li {
     grid-column: auto/span 1;
   }
 }
 
 @screen xl {
-  .aka-blog-posts li:nth-child(3n + 1) {
+  .dev-blog-posts li:nth-child(3n + 1) {
     grid-column: auto/span 2;
   }
 }

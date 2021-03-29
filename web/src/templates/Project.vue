@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="aka-project">
+    <div class="dev-project">
       <header>
         <h1 class="font-black leading-loose text-4xl mt-16 mb-10">
           {{ $page.project.title }}

@@ -1,5 +1,5 @@
 <template>
-  <ul class="aka-projects grid gap-8 items-stretch">
+  <ul class="dev-projects grid gap-8 items-stretch">
     <project-card v-for="project in projects" :key="project.node.id" :project="project.node" />
   </ul>
 </template>
@@ -25,17 +25,17 @@ export default {
 
 <style scoped>
 @screen md {
-  .aka-projects {
+  .dev-projects {
     grid-template-columns: 1fr 1fr;
   }
 
-  .aka-projects li {
+  .dev-projects li {
     grid-column: auto/span 1;
   }
 }
 
 @screen lg {
-  .aka-projects li:nth-child(3n + 1) {
+  .dev-projects li:nth-child(3n + 1) {
     grid-column: auto/span 2;
   }
 }

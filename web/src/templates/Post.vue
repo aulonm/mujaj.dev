@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <div class="aka-blog-post">
+    <div class="dev-blog-post">
       <article>
         <header class="mb-8">
           <h1 class="font-black text-3xl leading-tight xl:text-center xl:text-5xl">

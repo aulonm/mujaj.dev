@@ -12,7 +12,7 @@
 <script>
 import { SunIcon, MoonIcon } from 'vue-feather-icons';
 // local storage key
-const LS_MODE = 'aka-theme-mode';
+const LS_MODE = 'dev-theme-mode';
 
 export default {
   components: {

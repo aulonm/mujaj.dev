@@ -1,13 +1,6 @@
 <template>
   <Layout>
-    <h1 class="aka-section-heading">About</h1>
-    <g-image
-      class="mb-10"
-      src="@/assets/images/about-banner.jpeg"
-      alt="Lit latern in a dark alley"
-      quality="80"
-      width="1600"
-    />
+    <h1 class="dev-section-heading">About</h1>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet leo ut magna sagittis iaculis. Sed sed
