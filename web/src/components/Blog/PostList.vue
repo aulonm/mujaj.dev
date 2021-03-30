@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 @screen md {
   .dev-blog-posts {
     grid-template-columns: 1fr 1fr;

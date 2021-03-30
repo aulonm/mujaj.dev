@@ -69,7 +69,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="postcss" scoped>
 .project-content p {
   @apply text-lg leading-relaxed px-0;
 }

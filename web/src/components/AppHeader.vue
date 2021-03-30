@@ -52,7 +52,7 @@ export default {
       },
       {
         label: 'portfolio',
-        to: '/portfolio',
+        to: '/portfolios',
       },
     ],
   }),

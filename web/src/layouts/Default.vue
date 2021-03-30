@@ -20,7 +20,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss">
 .container {
   @apply relative mx-auto w-full;
 }

@@ -31,7 +31,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="postcss" scoped>
 .dev-project-pagination {
   max-width: 320px;
 }

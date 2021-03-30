@@ -1,7 +1,7 @@
 <template>
   <footer class="dev-footer bg-footer mt-auto p-8 text-center text-gray">
     <div class="container">
-      <div class="flex flex-row justify-center mb-2">
+      <div class="flex flex-row justify-center mb-2 text-black dark:text-white">
         <a href="https://github.com/aulonm">
           <github-logo class="h-4" />
         </a>

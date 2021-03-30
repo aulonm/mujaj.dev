@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="postcss" scoped>
 @screen md {
   .dev-banner-wrapper {
     grid-template-columns: 55% 1fr;

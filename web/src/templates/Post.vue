@@ -98,7 +98,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="postcss" scoped>
 .blog-post-content {
   max-width: 1000px;
 }

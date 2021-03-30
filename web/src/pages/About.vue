@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .dev-section-subheading {
   @apply text-xl font-bold leading-none mb-4;
 }

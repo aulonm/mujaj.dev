@@ -72,7 +72,7 @@ export default {
 };
 </script>
 
-<style lang="css" scoped>
+<style lang="postcss" scoped>
 .dev-post-card.is-large {
   @apply relative bg-secondary text-black;
 }

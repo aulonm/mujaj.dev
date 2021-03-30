@@ -44,7 +44,7 @@ module.exports = function (api) {
     createPagesWithPagination({
       edges: allSanityPortfolios,
       component: './src/templates/Portfolio.vue',
-      path: 'portfolio',
+      path: 'portfolios',
       createPage,
     });
   });
