@@ -18,13 +18,13 @@
 
         var preferredTheme
         try {
-          preferredTheme = localStorage.getItem('aka-theme-mode')
+          preferredTheme = localStorage.getItem('dev-theme-mode')
         } catch (err) {}
 
         window.__setPreferredTheme = function(newTheme) {
           setTheme(newTheme)
           try {
-            localStorage.setItem('aka-theme-mode', newTheme)
+            localStorage.setItem('dev-theme-mode', newTheme)
           } catch (err) {}
         }
 

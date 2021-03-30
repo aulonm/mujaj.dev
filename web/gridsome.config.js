@@ -14,7 +14,7 @@ const clientConfig = require('./client-config');
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = {
-  siteName: 'Mujaj dev',
+  siteName: 'Mujaj',
   siteDescription: 'Just a website for Mujaj dev',
 
   templates: {

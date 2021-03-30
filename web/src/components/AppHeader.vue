@@ -51,8 +51,8 @@ export default {
         to: '/projects',
       },
       {
-        label: 'photo collection',
-        to: '/photo-collection',
+        label: 'portfolio',
+        to: '/portfolio',
       },
     ],
   }),

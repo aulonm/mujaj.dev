@@ -10,7 +10,7 @@ import category from './documents/category'
 import post from './documents/post'
 import siteSettings from './documents/siteSettings'
 import project from './documents/project'
-import photoCollection from './documents/photoCollection'
+import portfolio from './documents/portfolio'
 
 // Object types
 import bodyPortableText from './objects/bodyPortableText'
@@ -33,7 +33,7 @@ export default createSchema({
     category,
     author,
     project,
-    photoCollection,
+    portfolio,
     mainImage,
     authorReference,
     bodyPortableText,

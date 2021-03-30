@@ -27,7 +27,7 @@ module.exports = function (api) {
     const { data } = await graphql(createPagesQuery);
     const allSanityPosts = data.allSanityPost.edges;
     const allSanityProjects = data.allSanityProject.edges;
-    const allSanityPhotoCollections = data.allSanityPhotoCollection.edges;
+    const allSanityPortfolios = data.allSanityPortfolio.edges;
 
     createPagesWithPagination({
       edges: allSanityPosts,
@@ -42,9 +42,9 @@ module.exports = function (api) {
       createPage,
     });
     createPagesWithPagination({
-      edges: allSanityPhotoCollections,
-      component: './src/templates/Collection.vue',
-      path: 'photo-collection',
+      edges: allSanityPortfolios,
+      component: './src/templates/Portfolio.vue',
+      path: 'portfolio',
       createPage,
     });
   });

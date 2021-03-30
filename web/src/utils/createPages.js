@@ -32,7 +32,7 @@ const createPagesQuery = gql`
         }
       }
     }
-    allSanityPhotoCollection(sortBy: "updatedAt") {
+    allSanityPortfolio(sortBy: "updatedAt") {
       edges {
         node {
           id
