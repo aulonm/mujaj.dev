@@ -2,18 +2,21 @@
   <Layout>
     <div class="blog-container">
       <template v-if="$page.collections.edges.length" :posts="$page.collections.edges">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <g-link
             v-for="({ node }, index) in $page.collections.edges"
             :key="index"
-            class="shadow-lg rounded p-3 flex flex-col justify-between"
+            class="shadow-lg rounded"
             :to="`/photo-collection/${node.slug.current}`"
           >
-            <div class="group relative">
-              <img class="w-full md:w-100 block rounded" :src="node.imagesGallery[0].asset.url" />
-            </div>
-            <div class="p-5">
-              <h3 class="text-md">{{ node.title }}</h3>
+            <div class="relative text-white uppercase">
+              <img class="w-full block" :src="node.imagesGallery[0].asset.url" />
+              <div class="hover:opacity-0">
+                <div class="absolute left-0 top-0 w-full h-full bg-black opacity-50"></div>
+                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                  <span>{{ node.title }}</span>
+                </div>
+              </div>
             </div>
           </g-link>
         </div>

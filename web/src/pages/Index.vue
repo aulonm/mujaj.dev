@@ -2,15 +2,9 @@
   <Layout>
     <app-banner heading="Mujaj dev" subheading="Welcome to:">
       <p class="p-sm">
-        A gridsome starter inspired by the
-        <a
-          class="inline-flex border-b-4 border-primary leading-tight"
-          href="https://fabrx.co/brightkit/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >bright kit.</a
-        >
-        Made with tailwind css. Integrates with sanity.io
+        A blog / portofolio for my own creations within
+        <span class="inline-flex border-b-4 border-primary leading-tight">development</span> and
+        <span class="inline-flex border-b-4 border-primary leading-tight">photography</span>.
       </p>
     </app-banner>
     <section v-if="$page.posts.edges.length" class="mx-auto pt-10">

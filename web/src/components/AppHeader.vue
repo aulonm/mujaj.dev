@@ -35,6 +35,7 @@ export default {
   components: {
     ThemeToggle,
   },
+
   data: () => ({
     nav: [
       {
