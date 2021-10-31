@@ -12,10 +12,8 @@
             <div class="relative text-white uppercase">
               <img class="w-full block" :src="node.imagesGallery[0].asset.url" />
               <div class="transition duration-500 ease-in-out hover:opacity-0">
-                <div class="absolute left-0 top-0 w-full h-full bg-black opacity-50"></div>
-                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <span>{{ node.title }}</span>
-                </div>
+                <span class="absolute left-0 top-0 w-full h-full bg-black opacity-50"></span>
+                <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">{{ node.title }}</span>
               </div>
             </div>
           </g-link>
