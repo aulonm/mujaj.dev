@@ -35,13 +35,13 @@ export default {
       name: 'updatedAt',
       type: 'datetime',
       title: 'Updated at',
-      description: 'When was this gallery last updated'
+      description: 'When was this gallery last updated',
     },
     {
       name: 'body',
       title: 'Body',
       type: 'bodyPortableText',
-      description: 'Information about this gallery'
+      description: 'Information about this gallery',
     },
   ],
 
@@ -51,4 +51,4 @@ export default {
       media: 'mainImage',
     },
   },
-}
+};
