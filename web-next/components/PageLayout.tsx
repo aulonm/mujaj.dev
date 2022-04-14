@@ -10,7 +10,9 @@ export default function PageLayout(props: Props) {
     <>
       <Header />
       <div className="grow">
-        <main className="relative mx-auto mb-8 w-full">{props.children}</main>
+        <main className="relative mx-auto mb-8 max-w-[89rem]">
+          {props.children}
+        </main>
       </div>
       <Footer />
     </>
