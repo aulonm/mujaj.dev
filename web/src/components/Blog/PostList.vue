@@ -1,5 +1,5 @@
 <template>
-  <ul class="dev-blog-posts grid gap-8 items-stretch">
+  <ul class="grid-cols-[1fr_1fr] grid gap-8 items-stretch">
     <li v-for="(edge, index) in posts" :key="edge.node.id">
       <post-card :index="index" :post="edge.node" />
     </li>

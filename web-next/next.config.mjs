@@ -14,6 +14,9 @@ const nextConfig = {
     SANITY_PROJECT_ID: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     SANITY_API_TOKEN: process.env.NEXT_PUBLIC_SANITY_API_TOKEN,
   },
+  images: {
+    domains: ['cdn.sanity.io'],
+  },
 };
 
 export default nextConfig;

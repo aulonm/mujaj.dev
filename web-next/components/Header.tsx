@@ -7,7 +7,7 @@ export const Header = () => {
         <div className="app-logo">
           <Link href="/">
             <a>
-              <strong>Sitename</strong>
+              <strong>Mujaj</strong>
             </a>
           </Link>
         </div>
