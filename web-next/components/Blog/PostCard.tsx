@@ -1,12 +1,12 @@
 import NextImage from 'next/image';
 import NextLink from 'next/link';
 import classNames from 'clsx';
-import createImageUrlBuilder from '@sanity/image-url';
 import { getImageDimensions } from '@sanity/asset-utils';
 import { ImageBuilder } from '@/lib/sanity';
 
 interface PostCardProps {
   post: {};
+  isLarge?: boolean;
 }
 
 export const PostCard = (props: PostCardProps) => {
@@ -37,7 +37,7 @@ export const PostCard = (props: PostCardProps) => {
     <div
       className={classNames(
         'dev-post-card bg-card relative flex h-full flex-col',
-        { 'bg-secondary relative text-black': props.isLargs }
+        { 'bg-secondary relative text-black': props.isLarge }
       )}
     >
       <div className="relative flex w-full flex-auto">
@@ -64,17 +64,15 @@ export const PostCard = (props: PostCardProps) => {
           {props.post.authors.length > 0 && (
             <span>By: {getAuthors(props.post)}</span>
           )}
-          <span v-if="post.authors.length > 0"> /</span>
-          Posted on: {props.post.publishedAt}
-        </div>
-        <div className="post-card-link -ml-4 inline-flex px-4 text-base font-medium">
-          <NextLink href={postUrl(props.post.slug)}>
-            <a>
-              <h2 className="post-card-heading mb-auto text-lg font-bold leading-tight">
-                {props.post.title}
-              </h2>
-            </a>
-          </NextLink>
+          <div className="post-card-link -ml-4 inline-flex px-4 text-base font-medium">
+            <NextLink href={postUrl(props.post.slug)}>
+              <a>
+                <h2 className="post-card-heading mb-auto text-lg font-bold leading-tight">
+                  {props.post.title}
+                </h2>
+              </a>
+            </NextLink>
+          </div>
         </div>
       </div>
     </div>
