@@ -3,14 +3,14 @@ import NextLink from 'next/link';
 import classNames from 'clsx';
 import { getImageDimensions } from '@sanity/asset-utils';
 import { ImageBuilder } from '@/lib/sanity';
+import { Author, Post } from '@/types';
 
 interface PostCardProps {
-  post: {};
+  post: Post;
   isLarge?: boolean;
 }
 
 export const PostCard = (props: PostCardProps) => {
-  console.log(props.post.mainImage);
   let dimensions;
   if (props.post.mainImage) {
     dimensions = getImageDimensions(props.post.mainImage);
@@ -18,19 +18,19 @@ export const PostCard = (props: PostCardProps) => {
 
   const postUrl = (slug: { current: string }) => `/blog/${slug.current}`;
 
-  const getAuthors = (post) => {
+  const getAuthors = (post: Post) => {
     if (post.authors.length > 1) {
       let authors = '';
-      post.authors.forEach((author) => {
+      post.authors.forEach((author: Author) => {
         if (authors.length === 0) {
-          authors = author.author.name;
+          authors = author.name;
         } else {
-          authors = `${authors} / ${author.author.name}`;
+          authors = `${authors} / ${author.name}`;
         }
       });
       return authors;
     }
-    return post.authors[0].author.name;
+    return post.authors[0].name;
   };
 
   return (
@@ -49,8 +49,8 @@ export const PostCard = (props: PostCardProps) => {
                   className="dev-card-image relative flex w-full flex-auto"
                   image-class="block w-full h-full object-cover absolute"
                   src={ImageBuilder(props.post.mainImage.asset)}
-                  width={dimensions.width}
-                  height={dimensions.height}
+                  width={dimensions?.width}
+                  height={dimensions?.height}
                 />
               ) : (
                 <div className="from-primary to-secondary flex flex-col items-center justify-center bg-gradient-to-tl"></div>

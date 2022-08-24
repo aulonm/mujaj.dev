@@ -1,7 +1,5 @@
-import PageLayout from '@/components/PageLayout';
-
 export const Portfolio = () => {
-  return <PageLayout>Portfolio page</PageLayout>;
+  return <>Portfolio page</>;
 };
 
 export default Portfolio;

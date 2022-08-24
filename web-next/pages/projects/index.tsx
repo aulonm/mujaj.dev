@@ -1,7 +1,5 @@
-import PageLayout from '@/components/PageLayout';
-
 export const Projects = () => {
-  return <PageLayout>Projects page</PageLayout>;
+  return <>Projects page</>;
 };
 
 export default Projects;

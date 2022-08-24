@@ -1,8 +1,6 @@
-import PageLayout from '@/components/PageLayout';
-
 export const About = () => {
   return (
-    <PageLayout>
+    <>
       <h1 className="mb-6 text-2xl font-bold leading-none lg:mb-8 lg:text-4xl">
         About
       </h1>
@@ -26,7 +24,7 @@ export const About = () => {
       <h2 className="mb-6 text-2xl font-bold leading-none lg:mb-8 lg:text-4xl">
         Education
       </h2>
-    </PageLayout>
+    </>
   );
 };
 

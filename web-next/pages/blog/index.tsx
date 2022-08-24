@@ -1,29 +1,30 @@
-import PageLayout from '@/components/PageLayout';
 import { PostCard } from '@/components/Blog/PostCard';
 import { getClient } from '@/lib/sanity';
 import { groq } from 'next-sanity';
+import type { GetStaticProps } from 'next';
+import { Post } from '@/types';
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const query = groq`*[_type == "post" && !(_id in path('drafts.**'))] | order(_createdAt asc)`;
 
   const client = getClient(false);
 
   const posts = await client.fetch(query);
 
-  console.log(posts);
-
   return {
     props: {
       posts,
     },
   };
-}
+};
 
-interface Props {}
+interface Props {
+  posts: Array<Post>;
+}
 
 export const Blog = (props: Props) => {
   return (
-    <PageLayout>
+    <>
       <h1>Blog</h1>
       <div className="blog-container">
         {props.posts.length ? (
@@ -40,7 +41,7 @@ export const Blog = (props: Props) => {
           </div>
         )}
       </div>
-    </PageLayout>
+    </>
   );
 };
 

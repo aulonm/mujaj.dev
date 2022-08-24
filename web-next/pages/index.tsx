@@ -1,9 +1,13 @@
-import PageLayout from '@/components/PageLayout';
 import type { NextPage } from 'next';
 import { getClient } from '@/lib/sanity';
 import { groq } from 'next-sanity';
 import { Banner } from '@/components/Banner';
 import { PostCard } from '@/components/Blog/PostCard';
+import { Post } from '@/types';
+
+interface Props {
+  posts: Array<Post>;
+}
 
 export async function getStaticProps() {
   const query = groq`*[_type == "post" && !(_id in path('drafts.**'))] | order(_createdAt asc)`;
@@ -11,8 +15,6 @@ export async function getStaticProps() {
   const client = getClient(false);
 
   const posts = await client.fetch(query);
-
-  console.log(posts);
 
   return {
     props: {
@@ -22,9 +24,8 @@ export async function getStaticProps() {
 }
 
 const Home: NextPage = (props) => {
-  console.log(props.posts);
   return (
-    <PageLayout>
+    <>
       <Banner heading="Mujaj dev" subheading="Welcome to:">
         <p className="p-sm">
           A blog / portofolio for my own creations within{' '}
@@ -50,7 +51,7 @@ const Home: NextPage = (props) => {
           </ul>
         </section>
       )}
-    </PageLayout>
+    </>
   );
 };
 
