@@ -5,7 +5,7 @@ export const Footer = () => {
   return (
     <footer className="dev-footer bg-footer text-gray mt-auto p-8 text-center">
       <div className="relative mx-auto w-full">
-        <div className="mb-2 flex flex-row justify-center gap-4 text-black dark:text-white">
+        <div className="gap-4s mb-2 flex flex-row justify-center text-black dark:text-white">
           <Link href="https://github.com/aulonm" passHref>
             <a>
               <Image src="/images/github.svg" width={24} height={24} />
