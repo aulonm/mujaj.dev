@@ -1,14 +1,16 @@
-export default {
+import {defineType, defineField} from 'sanity'
+
+export const author = defineType({
   name: 'author',
   type: 'document',
   title: 'Author',
   fields: [
-    {
+    defineField({
       name: 'name',
       type: 'string',
       title: 'Name',
-    },
-    {
+    }),
+    defineField({
       name: 'slug',
       type: 'slug',
       title: 'Slug',
@@ -17,17 +19,17 @@ export default {
         source: 'name',
         maxLength: 96,
       },
-    },
-    {
+    }),
+    defineField({
       name: 'image',
       type: 'mainImage',
       title: 'Image',
-    },
-    {
+    }),
+    defineField({
       name: 'bio',
       type: 'bioPortableText',
       title: 'Biography',
-    },
+    }),
   ],
   preview: {
     select: {
@@ -36,4 +38,4 @@ export default {
       media: 'image',
     },
   },
-};
+})

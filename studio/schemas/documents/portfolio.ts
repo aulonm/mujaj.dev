@@ -1,15 +1,17 @@
-export default {
+import {defineType, defineField} from 'sanity'
+
+export const portfolio = defineType({
   name: 'portfolio',
   title: 'Portfolio',
   type: 'document',
   fields: [
-    {
+    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -18,31 +20,31 @@ export default {
         maxLength: 96,
       },
       validation: (Rule) => Rule.required(),
-    },
-    {
+    }),
+    defineField({
       name: 'imagesGallery',
       title: 'Images Gallery',
       type: 'array',
-      of: [{ type: 'image' }],
-    },
-    {
+      of: [{type: 'image'}],
+    }),
+    defineField({
       name: 'category',
       title: 'Category',
       type: 'reference',
-      to: { type: 'category' },
-    },
-    {
+      to: {type: 'category'},
+    }),
+    defineField({
       name: 'updatedAt',
       type: 'datetime',
       title: 'Updated at',
       description: 'When was this gallery last updated',
-    },
-    {
+    }),
+    defineField({
       name: 'body',
       title: 'Body',
       type: 'bodyPortableText',
       description: 'Information about this gallery',
-    },
+    }),
   ],
 
   preview: {
@@ -51,4 +53,4 @@ export default {
       media: 'mainImage',
     },
   },
-};
+})

@@ -1,4 +1,6 @@
-export default {
+import {defineType} from 'sanity'
+
+export const authorReference = defineType({
   name: 'authorReference',
   type: 'object',
   title: 'Author reference',
@@ -19,4 +21,4 @@ export default {
       media: 'author.image.asset',
     },
   },
-};
+})
