@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f7f5f1;
+  --text: #1b1b1f;
+  --muted: rgba(27, 27, 31, 0.7);
+  --muted-2: rgba(27, 27, 31, 0.5);
+  --border: rgba(0, 0, 0, 0.1);
+  --border-strong: rgba(0, 0, 0, 0.2);
+  --accent: #1b1b1f;
+  --accent-contrast: #ffffff;
+}
+
+[data-theme='dark'] {
+  --bg: #0b0b0f;
+  --text: #f5f1e8;
+  --muted: rgba(245, 241, 232, 0.7);
+  --muted-2: rgba(245, 241, 232, 0.5);
+  --border: rgba(245, 241, 232, 0.12);
+  --border-strong: rgba(245, 241, 232, 0.25);
+  --accent: #f5f1e8;
+  --accent-contrast: #0b0b0f;
+}
+
+body {
+  @apply m-0;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Fraunces", "Space Grotesk", serif;
+}
+
+code {
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}

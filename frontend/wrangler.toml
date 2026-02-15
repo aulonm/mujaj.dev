@@ -1,0 +1,6 @@
+name = "frontend"
+main = "./dist/server/index.js"
+compatibility_date = "2025-02-15"
+
+[assets]
+directory = "./dist/client"
