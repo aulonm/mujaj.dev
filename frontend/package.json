@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "deploy": "pnpm build && wrangler deploy"
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@tailwindcss/vite": "4.1.18",
@@ -24,6 +24,7 @@
     "vite-tsconfig-paths": "5.1.4"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.25.0",
     "@tanstack/devtools-vite": "0.3.11",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.2.0",
