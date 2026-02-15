@@ -1,0 +1,12 @@
+{
+  "name": "mujaj.dev",
+  "private": true,
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "dev": "pnpm --dir frontend dev",
+    "build": "pnpm --dir frontend build",
+    "preview": "pnpm --dir frontend preview",
+    "test": "pnpm --dir frontend test",
+    "deploy": "pnpm --dir frontend deploy"
+  }
+}
