@@ -1,10 +1,11 @@
 # mujaj.dev
 
-Personal site workspace with a single frontend app.
+Personal site monorepo with a single frontend app.
 
 ## Structure
 
 - `frontend/`: Vite + React app (TanStack Router, Tailwind CSS)
+- `pnpm-workspace.yaml`: workspace definition
 - `package.json`: root scripts that proxy into `frontend/`
 
 ## Quick start
