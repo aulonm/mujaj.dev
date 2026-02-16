@@ -94,6 +94,7 @@ const skills = [
   'React Native',
   'CMS Strategy',
   'Platform Enablement',
+  'Vue'
 ]
 
 function CvPage() {
