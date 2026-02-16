@@ -52,28 +52,28 @@ type Theme = 'light' | 'dark'
 const Devtools =
   import.meta.env.DEV && !import.meta.env.SSR
     ? lazy(async () => {
-        const [{ TanStackDevtools }, { TanStackRouterDevtoolsPanel }] =
-          await Promise.all([
-            import('@tanstack/react-devtools'),
-            import('@tanstack/react-router-devtools'),
-          ])
+      const [{ TanStackDevtools }, { TanStackRouterDevtoolsPanel }] =
+        await Promise.all([
+          import('@tanstack/react-devtools'),
+          import('@tanstack/react-router-devtools'),
+        ])
 
-        const DevtoolsComponent = () => (
-          <TanStackDevtools
-            config={{
-              position: 'bottom-right',
-              plugins: [
-                {
-                  name: 'Tanstack Router',
-                  render: <TanStackRouterDevtoolsPanel />,
-                },
-              ],
-            }}
-          />
-        )
+      const DevtoolsComponent = () => (
+        <TanStackDevtools
+          config={{
+            position: 'bottom-right',
+            plugins: [
+              {
+                name: 'Tanstack Router',
+                render: <TanStackRouterDevtoolsPanel />,
+              },
+            ],
+          }}
+        />
+      )
 
-        return { default: DevtoolsComponent }
-      })
+      return { default: DevtoolsComponent }
+    })
     : null
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -113,23 +113,23 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body>
-        <div className="min-h-screen bg-[var(--bg)] text-[var(--text)]">
-          <header className="border-b border-[var(--border)]">
+        <div className="min-h-screen bg-(--bg) text-(--text)">
+          <header className="border-b border-(--border)">
             <nav className="mx-auto flex w-full max-w-4xl flex-col gap-4 px-6 py-6 sm:flex-row sm:items-center sm:justify-between">
-              <div className="text-sm font-semibold tracking-[0.18em] uppercase text-[var(--muted)]">
+              <div className="text-sm font-semibold tracking-[0.18em] uppercase text-(--muted)">
                 Aulon Mujaj
               </div>
-              <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.2em] text-[var(--muted-2)]">
-                <Link to="/" className="transition hover:text-[var(--accent)]">
+              <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.2em] text-(--muted-2)">
+                <Link to="/" className="transition hover:text-(--accent)">
                   Home
                 </Link>
                 <Link
                   to="/portfolio"
-                  className="transition hover:text-[var(--accent)]"
+                  className="transition hover:text-(--accent)"
                 >
                   Portfolio
                 </Link>
-                <Link to="/cv" className="transition hover:text-[var(--accent)]">
+                <Link to="/cv" className="transition hover:text-(--accent)">
                   CV
                 </Link>
                 <button
@@ -139,7 +139,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                       current === 'dark' ? 'light' : 'dark'
                     )
                   }
-                  className="rounded-full border border-[var(--border)] px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-[var(--muted-2)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+                  className="rounded-full border border-(--border) px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-(--muted-2) transition hover:border-(--accent) hover:text-(--accent)"
                 >
                   {theme === 'dark' ? 'Light' : 'Dark'}
                 </button>
@@ -162,14 +162,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 function NotFound() {
   return (
     <section className="mx-auto flex min-h-[60vh] w-full max-w-3xl flex-col items-start justify-center gap-6 py-16">
-      <div className="text-xs uppercase tracking-[0.5em] text-[var(--muted-2)]">
+      <div className="text-xs uppercase tracking-[0.5em] text-(--muted-2)">
         404
       </div>
       <div className="space-y-3">
-        <h1 className="text-3xl font-semibold tracking-tight text-[var(--text)]">
+        <h1 className="text-3xl font-semibold tracking-tight text-(--text)">
           This route does not exist.
         </h1>
-        <p className="max-w-xl text-base text-[var(--muted)]">
+        <p className="max-w-xl text-base text-(--muted)">
           The page you are looking for has moved, or the link is not correct.
           Try heading back to the home page.
         </p>
@@ -177,13 +177,13 @@ function NotFound() {
       <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.2em]">
         <Link
           to="/"
-          className="rounded-full border border-[var(--border)] px-4 py-2 text-[10px] text-[var(--muted-2)] transition hover:border-[var(--accent)] hover:text-[var(--accent)]"
+          className="rounded-full border border-(--border) px-4 py-2 text-[10px] text-(--muted-2) transition hover:border-(--accent) hover:text-(--accent)"
         >
           Back Home
         </Link>
         <Link
           to="/portfolio"
-          className="text-[10px] text-[var(--muted-2)] transition hover:text-[var(--accent)]"
+          className="text-[10px] text-(--muted-2) transition hover:text-(--accent)"
         >
           View Portfolio
         </Link>

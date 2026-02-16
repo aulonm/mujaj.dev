@@ -67,23 +67,6 @@ const experience = [
       },
     ],
   },
-  {
-    company: 'KIWI minipris',
-    location: 'Norway',
-    period: 'Jun 2008 — Dec 2016',
-    roles: [
-      {
-        title: 'Lock Manager',
-        dates: 'Aug 2012 — Dec 2016',
-        description: 'I managed store operations and customer service.',
-      },
-      {
-        title: 'Cashier',
-        dates: 'Jun 2008 — Aug 2012',
-        description: 'I handled customer service and daily store operations.',
-      },
-    ],
-  },
 ]
 
 const education = [
@@ -118,11 +101,11 @@ function CvPage() {
     <section className="pb-16 pt-12">
       <div className="space-y-8 sm:space-y-10">
         <div>
-          <p className="text-[11px] uppercase tracking-[0.32em] text-[var(--muted-2)] sm:text-xs sm:tracking-[0.4em]">
+          <p className="text-[11px] uppercase tracking-[0.32em] text-(--muted-2) sm:text-xs sm:tracking-[0.4em]">
             Curriculum Vitae
           </p>
-          <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl">I am Aulon Mujaj</h1>
-          <p className="mt-4 max-w-2xl text-base text-[var(--muted)] sm:text-lg">
+          <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl">Aulon Mujaj</h1>
+          <p className="mt-4 max-w-2xl text-base text-(--muted) sm:text-lg">
             I'm a frontend engineer at OBOS in Oslo, focused on design systems,
             platform enablement, and product delivery.
           </p>
@@ -130,31 +113,31 @@ function CvPage() {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
           <div className="space-y-6">
             <h2 className="text-2xl">Experience</h2>
-            <div className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
+            <div className="divide-y divide-(--border) border-y border-(--border)">
               {experience.map((employer) => (
                 <div key={employer.company} className="py-6">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div>
                       <p className="text-lg">{employer.company}</p>
-                      <p className="text-xs uppercase tracking-[0.24em] text-[var(--muted-2)]">
+                      <p className="text-xs uppercase tracking-[0.24em] text-(--muted-2)">
                         {employer.location}
                       </p>
                     </div>
-                    <p className="text-[10px] uppercase tracking-[0.28em] text-[var(--muted-2)] sm:text-xs">
+                    <p className="text-[10px] uppercase tracking-[0.28em] text-(--muted-2) sm:text-xs">
                       {employer.period}
                     </p>
                   </div>
-                  <div className="mt-5 space-y-4 border-l border-[var(--border)] pl-4">
+                  <div className="mt-5 space-y-4 border-l border-(--border) pl-4">
                     {employer.roles.map((role) => (
                       <div
                         key={`${employer.company}-${role.title}-${role.dates}`}
                         className="space-y-2"
                       >
-                        <div className="flex flex-wrap items-center justify-between gap-2 text-[10px] uppercase tracking-[0.28em] text-[var(--muted-2)] sm:text-xs">
+                        <div className="flex flex-wrap items-center justify-between gap-2 text-[10px] uppercase tracking-[0.28em] text-(--muted-2) sm:text-xs">
                           <span>{role.title}</span>
                           <span>{role.dates}</span>
                         </div>
-                        <p className="text-sm text-[var(--muted)]">
+                        <p className="text-sm text-(--muted)">
                           {role.description}
                         </p>
                       </div>
@@ -167,16 +150,16 @@ function CvPage() {
           <div className="space-y-6">
             <div>
               <h2 className="text-2xl">Profile</h2>
-              <p className="mt-4 text-sm text-[var(--muted)]">
+              <p className="mt-4 text-sm text-(--muted)">
                 Welcome to my page. I do frontend development and engineering.
                 I have Java experience, but I am not looking for Java roles.
               </p>
-              <div className="mt-5 space-y-2 text-sm text-[var(--muted)]">
+              <div className="mt-5 space-y-2 text-sm text-(--muted)">
                 <p>Oslo, Norway</p>
                 <p>I'm a frontend engineer at OBOS</p>
                 <a
                   href="mailto:aulon@mujaj.no"
-                  className="block text-[var(--muted)] transition hover:text-[var(--accent)]"
+                  className="block text-(--muted) transition hover:text-(--accent)"
                 >
                   aulon@mujaj.no
                 </a>
@@ -184,7 +167,7 @@ function CvPage() {
                   href="https://github.com/aulonm"
                   target="_blank"
                   rel="noreferrer"
-                  className="block text-[var(--muted)] transition hover:text-[var(--accent)]"
+                  className="block text-(--muted) transition hover:text-(--accent)"
                 >
                   github.com/aulonm
                 </a>
@@ -192,7 +175,7 @@ function CvPage() {
                   href="https://www.linkedin.com/in/aulon-mujaj-585a3457/"
                   target="_blank"
                   rel="noreferrer"
-                  className="block text-[var(--muted)] transition hover:text-[var(--accent)]"
+                  className="block text-(--muted) transition hover:text-(--accent)"
                 >
                   linkedin.com/in/aulon-mujaj-585a3457
                 </a>
@@ -200,11 +183,11 @@ function CvPage() {
             </div>
             <div>
               <h2 className="text-2xl">Skills</h2>
-              <div className="mt-4 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.28em] text-[var(--muted-2)]">
+              <div className="mt-4 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.28em] text-(--muted-2)">
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-[var(--border)] px-3 py-2"
+                    className="rounded-full border border-(--border) px-3 py-2"
                   >
                     {skill}
                   </span>
@@ -213,12 +196,12 @@ function CvPage() {
             </div>
             <div>
               <h2 className="text-2xl">Education</h2>
-              <div className="mt-4 space-y-4 text-sm text-[var(--muted)]">
+              <div className="mt-4 space-y-4 text-sm text-(--muted)">
                 {education.map((item) => (
                   <div key={item.title}>
-                    <p className="text-base text-[var(--text)]">{item.title}</p>
-                    <p className="text-[var(--muted-2)]">{item.detail}</p>
-                    <p className="text-xs uppercase tracking-[0.24em] text-[var(--muted-2)]">
+                    <p className="text-base text-(--text)">{item.title}</p>
+                    <p className="text-(--muted-2)">{item.detail}</p>
+                    <p className="text-xs uppercase tracking-[0.24em] text-(--muted-2)">
                       {item.period}
                     </p>
                   </div>
