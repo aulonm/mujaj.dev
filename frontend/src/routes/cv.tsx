@@ -14,19 +14,19 @@ const experience = [
         title: 'Software Engineer: Team Nettsted',
         dates: 'Sep 2025 — Present',
         description:
-          'Part of the Platform/Enabling team responsible for the web presence in Norway and Sweden and the Grunnmuren design system. Working closely with Sanity on enterprise CMS strategy and feedback-driven product improvements.',
+          'I am part of the Platform/Enabling team responsible for the web presence in Norway and Sweden and the Grunnmuren design system. I work closely with Sanity on enterprise CMS strategy and feedback-driven product improvements.',
       },
       {
         title: 'Technical Lead: Medlem',
         dates: 'Sep 2023 — Sep 2025',
         description:
-          'Tech lead for the Member business area with ownership of obos.no/medlem, obos.se/medlem, and the OBOS app. Led the migration from native apps to React Native, delivered Dec 2024 - Mar 2025.',
+          'I was tech lead for the Member business area with ownership of obos.no/medlem, obos.se/medlem, and the OBOS app. I led the migration from native apps to React Native, delivered Dec 2024 - Mar 2025.',
       },
       {
         title: 'Frontend Engineer',
         dates: 'Jan 2022 — Sep 2023',
         description:
-          'Frontend developer for the Member team, responsible for operations across the Member business area.',
+          'I was the frontend developer for the Member team, responsible for operations across the Member business area.',
       },
     ],
   },
@@ -39,18 +39,18 @@ const experience = [
         title: 'Frontend Engineer',
         dates: 'Aug 2017 — Jan 2022',
         description:
-          'Consultant for SPK and Oslo Kommune (Origo). Worked on Bydelsfakta and OKR-tracker, and contributed to internal CreativeCrew initiatives.',
+          'I was a consultant for SPK and Oslo Kommune (Origo). I worked on Bydelsfakta and OKR-tracker, and contributed to internal CreativeCrew initiatives.',
       },
       {
         title: 'Frontend Engineer',
         dates: 'Sep 2016 — Aug 2017',
         description:
-          'Frontend engineer with a mix of consulting engagements and internal work.',
+          'I worked as a frontend engineer with a mix of consulting engagements and internal work.',
       },
       {
         title: 'Summer Intern',
         dates: 'Jun 2016 — Aug 2016',
-        description: 'Summer internship focused on frontend development.',
+        description: 'My summer internship focused on frontend development.',
       },
     ],
   },
@@ -63,7 +63,7 @@ const experience = [
         title: 'Teaching Assistant (INF4331, INF3331)',
         dates: 'Sep 2015 — Dec 2017',
         description:
-          'Teaching assistant for Python and computer science courses at UiO.',
+          'I was a teaching assistant for Python and computer science courses at UiO.',
       },
     ],
   },
@@ -75,12 +75,12 @@ const experience = [
       {
         title: 'Lock Manager',
         dates: 'Aug 2012 — Dec 2016',
-        description: 'Managed store operations and customer service.',
+        description: 'I managed store operations and customer service.',
       },
       {
         title: 'Cashier',
         dates: 'Jun 2008 — Aug 2012',
-        description: 'Customer service and daily store operations.',
+        description: 'I handled customer service and daily store operations.',
       },
     ],
   },
@@ -121,9 +121,9 @@ function CvPage() {
           <p className="text-[11px] uppercase tracking-[0.32em] text-[var(--muted-2)] sm:text-xs sm:tracking-[0.4em]">
             Curriculum Vitae
           </p>
-          <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl">Aulon Mujaj</h1>
+          <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl">I am Aulon Mujaj</h1>
           <p className="mt-4 max-w-2xl text-base text-[var(--muted)] sm:text-lg">
-            Frontend engineer at OBOS in Oslo, focused on design systems,
+            I'm a frontend engineer at OBOS in Oslo, focused on design systems,
             platform enablement, and product delivery.
           </p>
         </div>
@@ -173,7 +173,7 @@ function CvPage() {
               </p>
               <div className="mt-5 space-y-2 text-sm text-[var(--muted)]">
                 <p>Oslo, Norway</p>
-                <p>Frontend Engineer at OBOS</p>
+                <p>I'm a frontend engineer at OBOS</p>
                 <a
                   href="mailto:aulon@mujaj.no"
                   className="block text-[var(--muted)] transition hover:text-[var(--accent)]"
