@@ -1,10 +1,16 @@
+import { i18n } from '@lingui/core'
+import { Trans } from '@lingui/react/macro'
 import {
   HeadContent,
   Scripts,
   createRootRoute,
   Link,
 } from '@tanstack/react-router'
+import { createServerFn } from '@tanstack/react-start'
+import { setResponseHeader } from '@tanstack/react-start/server'
+import { serialize } from 'cookie-es'
 import { lazy, Suspense, useEffect, useState } from 'react'
+import { locales } from '../modules/lingui/i18n'
 
 import appCss from '../styles.css?url'
 
@@ -47,6 +53,18 @@ export const Route = createRootRoute({
   notFoundComponent: NotFound,
 })
 
+const updateLanguage = createServerFn({ method: 'POST' })
+  .inputValidator((locale: string) => locale)
+  .handler(async ({ data }) => {
+    setResponseHeader(
+      'Set-Cookie',
+      serialize('locale', data, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: '/',
+      })
+    )
+  })
+
 type Theme = 'light' | 'dark'
 
 const Devtools =
@@ -78,6 +96,8 @@ const Devtools =
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark')
+  const nextLocale = i18n.locale === 'en' ? 'nb' : 'en'
+  const nextLocaleLabel = locales[nextLocale]
 
   useEffect(() => {
     if (typeof window === 'undefined') return
@@ -102,7 +122,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   }, [theme])
 
   return (
-    <html lang="en" data-theme="dark">
+    <html lang={i18n.locale} data-theme="dark">
       <head>
         <HeadContent />
         <script
@@ -121,16 +141,16 @@ function RootDocument({ children }: { children: React.ReactNode }) {
               </div>
               <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.2em] text-(--muted-2)">
                 <Link to="/" className="transition hover:text-(--accent)">
-                  Home
+                  <Trans>Home</Trans>
                 </Link>
                 <Link
                   to="/portfolio"
                   className="transition hover:text-(--accent)"
                 >
-                  Portfolio
+                  <Trans>Portfolio</Trans>
                 </Link>
                 <Link to="/cv" className="transition hover:text-(--accent)">
-                  CV
+                  <Trans>CV</Trans>
                 </Link>
                 <button
                   type="button"
@@ -141,7 +161,18 @@ function RootDocument({ children }: { children: React.ReactNode }) {
                   }
                   className="rounded-full border border-(--border) px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-(--muted-2) transition hover:border-(--accent) hover:text-(--accent)"
                 >
-                  {theme === 'dark' ? 'Light' : 'Dark'}
+                  {theme === 'dark' ? <Trans>Light</Trans> : <Trans>Dark</Trans>}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    updateLanguage({ data: nextLocale }).then(() => {
+                      location.reload()
+                    })
+                  }}
+                  className="rounded-full border border-(--border) px-3 py-2 text-[10px] uppercase tracking-[0.2em] text-(--muted-2) transition hover:border-(--accent) hover:text-(--accent)"
+                >
+                  {nextLocaleLabel}
                 </button>
               </div>
             </nav>
@@ -167,11 +198,13 @@ function NotFound() {
       </div>
       <div className="space-y-3">
         <h1 className="text-3xl font-semibold tracking-tight text-(--text)">
-          This route does not exist.
+          <Trans>This route does not exist.</Trans>
         </h1>
         <p className="max-w-xl text-base text-(--muted)">
-          The page you are looking for has moved, or the link is not correct.
-          Try heading back to the home page.
+          <Trans>
+            The page you are looking for has moved, or the link is not correct.
+            Try heading back to the home page.
+          </Trans>
         </p>
       </div>
       <div className="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.2em]">
@@ -179,13 +212,13 @@ function NotFound() {
           to="/"
           className="rounded-full border border-(--border) px-4 py-2 text-[10px] text-(--muted-2) transition hover:border-(--accent) hover:text-(--accent)"
         >
-          Back Home
+          <Trans>Back Home</Trans>
         </Link>
         <Link
           to="/portfolio"
           className="text-[10px] text-(--muted-2) transition hover:text-(--accent)"
         >
-          View Portfolio
+          <Trans>View Portfolio</Trans>
         </Link>
       </div>
     </section>

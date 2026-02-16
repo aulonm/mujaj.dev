@@ -1,5 +1,6 @@
+import { Trans } from '@lingui/react/macro'
 import { createFileRoute } from '@tanstack/react-router'
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa'
 
 export const Route = createFileRoute('/portfolio')({
   component: PortfolioPage,
@@ -61,12 +62,16 @@ function PortfolioPage() {
       <div className="space-y-6 sm:space-y-8">
         <div>
           <p className="text-[11px] uppercase tracking-[0.32em] text-(--muted-2) sm:text-xs sm:tracking-[0.4em]">
-            Portfolio
+            <Trans>Portfolio</Trans>
           </p>
-          <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl">Selected work</h1>
+          <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl">
+            <Trans>Selected work</Trans>
+          </h1>
           <p className="mt-4 max-w-2xl text-base text-(--muted) sm:text-lg">
-            A selection of platform, product, and public sector work spanning
-            design systems, products, and civic tech.
+            <Trans>
+              A selection of platform, product, and public sector work spanning
+              design systems, products, and civic tech.
+            </Trans>
           </p>
         </div>
         <div className="divide-y divide-(--border) border-y border-(--border)">
@@ -81,13 +86,23 @@ function PortfolioPage() {
                 {project.description}
               </p>
               {project.url && (
-                <a href={project.url} target="_blank" rel="noopener noreferrer" className="text-(--accent) underline">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-(--accent) underline"
+                >
                   {project.url}
                 </a>
               )}
               {project.sourceUrl && (
-                <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-(--accent) underline flex items-center gap-1">
-                  <FaGithub /> Source
+                <a
+                  href={project.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 text-(--accent) underline"
+                >
+                  <FaGithub /> <Trans>Source</Trans>
                 </a>
               )}
               <div className="mt-4 flex flex-wrap gap-2 text-[10px] uppercase tracking-[0.28em] text-(--muted-2) sm:text-[11px]">

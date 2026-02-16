@@ -1,0 +1,112 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language: \n"
+"Language-Team: \n"
+"Content-Type: \n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#: src/routes/portfolio.tsx:71
+msgid "A selection of platform, product, and public sector work spanning design systems, products, and civic tech."
+msgstr "Et utvalg av plattform-, produkt- og offentlig sektor-arbeid som spenner over designsystemer, produkter og civic tech."
+
+#: src/routes/__root.tsx:215
+msgid "Back Home"
+msgstr "Til forsiden"
+
+#: src/routes/cv.tsx:107
+msgid "Curriculum Vitae"
+msgstr "Curriculum Vitae"
+
+#: src/routes/__root.tsx:153
+#: src/routes/index.tsx:35
+msgid "CV"
+msgstr "CV"
+
+#: src/routes/__root.tsx:164
+msgid "Dark"
+msgstr "Mørk"
+
+#: src/routes/cv.tsx:217
+msgid "Education"
+msgstr "Utdanning"
+
+#: src/routes/cv.tsx:122
+msgid "Experience"
+msgstr "Erfaring"
+
+#: src/routes/index.tsx:13
+msgid "Frontend Engineer"
+msgstr "Frontendingenior"
+
+#: src/routes/__root.tsx:144
+msgid "Home"
+msgstr "Hjem"
+
+#: src/routes/index.tsx:16
+msgid "I build resilient frontend platforms for real-world teams."
+msgstr "Jeg bygger robuste frontend-plattformer for team i den virkelige verden."
+
+#: src/routes/cv.tsx:174
+msgid "I'm a frontend engineer at OBOS"
+msgstr "Jeg er frontendingenior hos OBOS"
+
+#: src/routes/cv.tsx:113
+msgid "I'm a frontend engineer at OBOS in Oslo, focused on design systems, platform enablement, and product delivery."
+msgstr ""
+
+#: src/routes/index.tsx:19
+msgid "I'm a frontend engineer at OBOS in Oslo. I focus on design systems, platform enablement, and product delivery."
+msgstr "Jeg er frontendingenior hos OBOS i Oslo. Jeg fokuserer på designsystemer, plattformenablement og produktleveranse."
+
+#: src/routes/__root.tsx:164
+msgid "Light"
+msgstr "Lys"
+
+#: src/routes/cv.tsx:171
+#: src/routes/index.tsx:40
+msgid "Oslo, Norway"
+msgstr "Oslo, Norge"
+
+#: src/routes/__root.tsx:150
+#: src/routes/index.tsx:29
+#: src/routes/portfolio.tsx:65
+msgid "Portfolio"
+msgstr "Portefolje"
+
+#: src/routes/cv.tsx:161
+msgid "Profile"
+msgstr "Profil"
+
+#: src/routes/portfolio.tsx:68
+msgid "Selected work"
+msgstr "Utvalgte prosjekter"
+
+#: src/routes/cv.tsx:202
+msgid "Skills"
+msgstr "Ferdigheter"
+
+#: src/routes/portfolio.tsx:105
+msgid "Source"
+msgstr "Kilde"
+
+#: src/routes/__root.tsx:204
+msgid "The page you are looking for has moved, or the link is not correct. Try heading back to the home page."
+msgstr "Siden du ser etter er flyttet, eller lenken er ikke riktig. Prøv å gå tilbake til forsiden."
+
+#: src/routes/__root.tsx:201
+msgid "This route does not exist."
+msgstr "Denne ruten finnes ikke."
+
+#: src/routes/__root.tsx:221
+msgid "View Portfolio"
+msgstr "Se portefolje"
+
+#: src/routes/cv.tsx:164
+msgid "Welcome to my page. I do frontend development and engineering. I have Java experience, but I am not looking for Java roles."
+msgstr "Velkommen til siden min. Jeg driver med frontendutvikling og engineering. Jeg har Java-erfaring, men ser ikke etter Java-roller."

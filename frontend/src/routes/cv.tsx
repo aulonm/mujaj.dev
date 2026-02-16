@@ -1,3 +1,4 @@
+import { Trans } from '@lingui/react/macro'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/cv')({
@@ -103,17 +104,23 @@ function CvPage() {
       <div className="space-y-8 sm:space-y-10">
         <div>
           <p className="text-[11px] uppercase tracking-[0.32em] text-(--muted-2) sm:text-xs sm:tracking-[0.4em]">
-            Curriculum Vitae
+            <Trans>Curriculum Vitae</Trans>
           </p>
-          <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl">Aulon Mujaj</h1>
+          <h1 className="mt-4 text-3xl sm:text-4xl md:text-5xl">
+            Aulon Mujaj
+          </h1>
           <p className="mt-4 max-w-2xl text-base text-(--muted) sm:text-lg">
-            I'm a frontend engineer at OBOS in Oslo, focused on design systems,
-            platform enablement, and product delivery.
+            <Trans>
+              I'm a frontend engineer at OBOS in Oslo, focused on design systems,
+              platform enablement, and product delivery.
+            </Trans>
           </p>
         </div>
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
           <div className="space-y-6">
-            <h2 className="text-2xl">Experience</h2>
+            <h2 className="text-2xl">
+              <Trans>Experience</Trans>
+            </h2>
             <div className="divide-y divide-(--border) border-y border-(--border)">
               {experience.map((employer) => (
                 <div key={employer.company} className="py-6">
@@ -150,14 +157,22 @@ function CvPage() {
           </div>
           <div className="space-y-6">
             <div>
-              <h2 className="text-2xl">Profile</h2>
+              <h2 className="text-2xl">
+                <Trans>Profile</Trans>
+              </h2>
               <p className="mt-4 text-sm text-(--muted)">
-                Welcome to my page. I do frontend development and engineering.
-                I have Java experience, but I am not looking for Java roles.
+                <Trans>
+                  Welcome to my page. I do frontend development and engineering.
+                  I have Java experience, but I am not looking for Java roles.
+                </Trans>
               </p>
               <div className="mt-5 space-y-2 text-sm text-(--muted)">
-                <p>Oslo, Norway</p>
-                <p>I'm a frontend engineer at OBOS</p>
+                <p>
+                  <Trans>Oslo, Norway</Trans>
+                </p>
+                <p>
+                  <Trans>I'm a frontend engineer at OBOS</Trans>
+                </p>
                 <a
                   href="mailto:aulon@mujaj.no"
                   className="block text-(--muted) transition hover:text-(--accent)"
@@ -183,7 +198,9 @@ function CvPage() {
               </div>
             </div>
             <div>
-              <h2 className="text-2xl">Skills</h2>
+              <h2 className="text-2xl">
+                <Trans>Skills</Trans>
+              </h2>
               <div className="mt-4 flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.28em] text-(--muted-2)">
                 {skills.map((skill) => (
                   <span
@@ -196,7 +213,9 @@ function CvPage() {
               </div>
             </div>
             <div>
-              <h2 className="text-2xl">Education</h2>
+              <h2 className="text-2xl">
+                <Trans>Education</Trans>
+              </h2>
               <div className="mt-4 space-y-4 text-sm text-(--muted)">
                 {education.map((item) => (
                   <div key={item.title}>

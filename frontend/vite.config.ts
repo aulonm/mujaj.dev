@@ -4,7 +4,8 @@ import viteReact from '@vitejs/plugin-react'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import { fileURLToPath, URL } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
-import { cloudflare } from "@cloudflare/vite-plugin";
+import { cloudflare } from '@cloudflare/vite-plugin'
+import { lingui } from '@lingui/vite-plugin'
 
 const config = defineConfig({
   optimizeDeps: {
@@ -26,9 +27,14 @@ const config = defineConfig({
       projects: ['./tsconfig.json'],
     }),
     tailwindcss(),
+    lingui(),
     tanstackStart(),
-    viteReact(),
-    cloudflare({ viteEnvironment: { name: "ssr" } }),
+    viteReact({
+      babel: {
+        plugins: ['@lingui/babel-plugin-lingui-macro'],
+      },
+    }),
+    cloudflare({ viteEnvironment: { name: 'ssr' } }),
   ],
 })
 
