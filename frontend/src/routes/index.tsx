@@ -12,11 +12,11 @@ function HomePage() {
           Frontend Engineer
         </p>
         <h1 className="text-3xl leading-[1.15] sm:text-4xl md:text-5xl">
-          Aulon Mujaj builds resilient frontend platforms for real-world teams.
+          I build resilient frontend platforms for real-world teams.
         </h1>
         <p className="max-w-2xl text-base text-[var(--muted)] sm:text-lg">
-          Frontend engineer at OBOS in Oslo. Focused on design systems, platform
-          enablement, and product delivery.
+          I'm a frontend engineer at OBOS in Oslo. I focus on design systems,
+          platform enablement, and product delivery.
         </p>
         <div className="flex flex-wrap gap-3">
           <Link

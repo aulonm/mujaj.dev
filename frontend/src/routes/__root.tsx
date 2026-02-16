@@ -4,9 +4,7 @@ import {
   createRootRoute,
   Link,
 } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 
 import appCss from '../styles.css?url'
 
@@ -50,6 +48,33 @@ export const Route = createRootRoute({
 })
 
 type Theme = 'light' | 'dark'
+
+const Devtools =
+  import.meta.env.DEV && !import.meta.env.SSR
+    ? lazy(async () => {
+        const [{ TanStackDevtools }, { TanStackRouterDevtoolsPanel }] =
+          await Promise.all([
+            import('@tanstack/react-devtools'),
+            import('@tanstack/react-router-devtools'),
+          ])
+
+        const DevtoolsComponent = () => (
+          <TanStackDevtools
+            config={{
+              position: 'bottom-right',
+              plugins: [
+                {
+                  name: 'Tanstack Router',
+                  render: <TanStackRouterDevtoolsPanel />,
+                },
+              ],
+            }}
+          />
+        )
+
+        return { default: DevtoolsComponent }
+      })
+    : null
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>('dark')
@@ -123,17 +148,11 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           </header>
           <main className="mx-auto w-full max-w-4xl px-6">{children}</main>
         </div>
-        <TanStackDevtools
-          config={{
-            position: 'bottom-right',
-          }}
-          plugins={[
-            {
-              name: 'Tanstack Router',
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-          ]}
-        />
+        {Devtools ? (
+          <Suspense fallback={null}>
+            <Devtools />
+          </Suspense>
+        ) : null}
         <Scripts />
       </body>
     </html>
